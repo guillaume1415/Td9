@@ -1,0 +1,29 @@
+@import '../reset.scss';
+@import '../variables.scss';
+
+@mixin smaller($size) {
+}
+@mixin alert($color, $size: false) {
+	background-color: lighten($color, 30%);
+	$text-color: darken($color, 20%);
+	$border-color: lighten($color, 30%);
+	$outline: $color;
+	$fontweight: 400;
+
+	font-weight: $fontweight;
+	outline: 1px solid $outline;
+	margin-bottom: $margin;
+	padding: $margin/2 $margin/1.2;
+	p {
+		color: $text-color;
+		text-shadow: none;
+	}
+}
+
+
+
+$icons: (
+	"s": 10vw,
+	"m": 50vw,
+	"l": 100vw,
+);

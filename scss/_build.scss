@@ -1,0 +1,59 @@
+@import 'mixins/alert.scss';
+@import 'mixins/btn.scss';
+@import 'mixins/navbar.scss';
+@import 'mixins/grid.scss';
+@import 'reset.scss';
+
+
+.alert {
+	@include alert($blue);
+	@each $name, $glyph in $type {
+		&-#{$name} {
+			@include alert($glyph);
+			@each $name, $size in $icons {
+				&-#{$name} {
+					display: inline-block;
+					font-family: "Icon Font";
+					width: $size;
+				}
+			}
+			
+		}
+	}
+}
+
+.btn {
+	@include btn();
+	@each $name, $glyph in $color_tab{
+		&-#{$name} {
+			@include btn_color($glyph);
+			}
+		}
+		@each $name, $glyph in $color_tab{
+			&-outline-#{$name} {
+				@include btn-outline($glyph);
+				}
+			}
+
+			
+	}
+	.btn-xl {
+		@include btn-xl();
+	}
+	
+	.btn-s {
+		@include btn-s();
+	}
+
+	// NAVBAR
+.navbar {
+    @include navbar();
+}
+
+.navbar-white{
+    @include navbar-white($bg_navbar_white, $color_navbar_white);
+}
+
+.navbar-dark {
+    @include navbar-dark($bg_navbar_dark, $color_navbar_dark);
+}

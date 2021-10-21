@@ -1,0 +1,58 @@
+@import '../variables.scss';
+
+
+@mixin btn () {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    // @include btn_color($color);
+    @include btn-size($padding: .375rem .75rem, $font-size: 1rem, $line-height: 1.5, $border-radius: .25rem);
+    cursor: pointer;
+    
+    
+    
+
+}
+@mixin propety_color($color,$fon_color: white){
+    background-color: $color;
+    border-color: $color;
+    color: $fon_color;
+}
+
+@mixin  btn_color($color,$fon_color: white) {
+    @include propety_color($color,$fon_color);
+    &:hover {
+        background-color: darken($color, 5%);
+    }
+    &:focus {
+        border-color:darken($color, 10%); 
+    }
+}
+
+@mixin btn-outline($color: $color-danger) {
+    background-color: transparent;
+    background-image: none;
+    border-color: $color;
+
+    &:hover {
+        @include propety_color($color,$fon_color: white);
+    }
+}
+
+@mixin btn-size($padding: .25rem .5rem, $font-size: .875rem, $line-height: 1.5, $border-radius: .2rem) {
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+}
+
+@mixin btn-s() {
+    @include btn-size(.25rem .5rem, .775rem!important);
+
+}
+
+@mixin btn-xl() {
+    @include btn-size(.5rem 1rem!important, 1.25rem!important);
+
+}
+

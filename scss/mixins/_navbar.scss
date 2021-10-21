@@ -1,0 +1,93 @@
+@mixin navbar($background: orange, $color: white) {
+    nav {
+        background-color: $background;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        padding: 1% 1% 1% 1%;
+    }
+
+    nav ul li:hover {
+        background-color: darken($background, 7.5%);
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: $color;
+    }
+
+    nav ul li {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @media screen and (min-width: 35rem) {
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        nav ul li {
+            border-bottom: none;
+        }
+    }
+
+    @media screen and (min-width: 50rem) {
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+}
+
+@mixin navbar-white($background, $color) {
+    @include navbar($background, $color);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #dee2e6;
+    z-index: 1;
+
+    nav ul li:hover {
+        background-color: darken(white, 0%);
+    }
+
+    nav > ul > li > a {
+        color: #666666;
+    }
+
+    nav ul li a:hover {
+        color: #000000;
+        transition-duration: 0.7s
+    }
+}
+
+@mixin navbar-dark($background, $color) {
+    @include navbar($background, $color);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #dee2e6;
+    z-index: 1;
+
+    nav ul li:hover {
+        background-color: darken(#323b47, 0%);
+    }
+
+    nav > ul > li > a {
+        color: #5d718e;
+    }
+
+    nav ul li a:hover {
+        color: lighten(#5d718e, 20%);
+        transition-duration: 0.7s
+    }
+}

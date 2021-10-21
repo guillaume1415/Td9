@@ -1,0 +1,33 @@
+$color_tab: (
+"blue": #4fade3,
+"grey-light": #eee,
+"grey-dark": #333,
+"red": #d63632,
+"green": #5da423,
+"yellow": #f9c638,
+"orange": #f77f00,
+);
+
+$blue: #4fade3;
+$grey-light: #eee;
+$grey-dark: #333;
+$red: #d63632;
+$green: #5da423;
+$yellow: #f9c638;
+$orange: #f77f00;
+$margin: 22px;
+
+$type: (
+	"success": $green,
+	"error": $red,
+	"warning": $yellow,
+	"info": $blue,
+);
+
+$bg_navbar_dark: #323b47; 
+$color_navbar_dark: #5d718e;
+$color_dark_link: #5d718e;
+
+$bg_navbar_white: #FFFFFF; 
+$color_navbar_white: #000000; 
+$color_white_link: #666666;
